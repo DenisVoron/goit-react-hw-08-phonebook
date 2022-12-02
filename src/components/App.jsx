@@ -17,7 +17,8 @@ import { fetchContacts } from "redux/operations";*/
 
 import Home from "../pages/Home";
 import Contacts from "../pages/Contacts";
-console.log(Layout);
+import LoginPage from "../pages/Login";
+import RegisterPage from "../pages/Register";
 //import css from "./App.module.css";
 
 
@@ -34,21 +35,19 @@ export function App() {
 
   return (
     <>
-      
-      {/*<nav>
-  <Link to="/">Home</Link>
-  </nav>*/}
-
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/contacts" element={<Contacts/>}/>
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />}/>
         </Route>
       </Routes>
     </>
   
   );
 }
+
 
 
 /**<Section title='Phonebook'>
