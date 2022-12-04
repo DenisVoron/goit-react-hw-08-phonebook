@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { useDispatch } from "react-redux";
 import { RiChatDeleteLine } from 'react-icons/ri';
-import { deleteContact } from "redux/operations";
+import { deleteContact } from "redux/contacts/operations";
 
 import css  from './Contact.module.css';
 
@@ -13,7 +13,7 @@ export const Contact = ({contact}) => {
     return (
         <>
             <p className={css.contactDescr}>
-                {contact.name}: <span>{contact.phone}</span>
+                {contact.name}: <span>{contact.number}</span>
             </p>
             <button className={css.contactBtn} onClick={handleDelete}>
                 <RiChatDeleteLine size={25} />

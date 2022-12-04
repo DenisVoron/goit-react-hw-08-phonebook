@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { getContacts } from "../../redux/contactsSlice";
-import { addContact } from "redux/operations";
+import { getContacts } from "../../redux/contacts/contactsSlice";
+import { addContact } from "redux/contacts/operations";
 
 import { toast } from 'react-toastify';
 

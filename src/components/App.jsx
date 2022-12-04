@@ -8,11 +8,11 @@ import { Wrapper } from './Wrapper/Wrapper';
 import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';*/
 
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
-/*import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux"; //, useSelector
 import { useEffect } from "react";
-import { fetchContacts } from "redux/operations";*/
+import { refreshUser } from "redux/auth/auth-operations";
 //import { getIsLoading, getError } from "redux/contactsSlice";
 
 import Home from "../pages/Home";
@@ -24,14 +24,14 @@ import RegisterPage from "../pages/Register";
 
 export function App() {
 
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   //const isLoading = useSelector(getIsLoading);
   //const error = useSelector(getError);
 
-    /*useEffect(() => {
-        dispatch(fetchContacts());
-    }, [dispatch]);*/
+    useEffect(() => {
+        dispatch(refreshUser());
+    }, [dispatch]);
 
   return (
     <>
