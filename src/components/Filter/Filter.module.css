@@ -1,5 +1,14 @@
 .inpyt-filter {
-    display: table-caption;
+    display: block;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input {
+    width: 224px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

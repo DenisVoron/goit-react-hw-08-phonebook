@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import TextField from '@mui/material/TextField';
+import SearchIcon from '@mui/icons-material/Search';
 import { useSelector, useDispatch } from 'react-redux';
 import { getFilter, changeFilter } from "../../redux/contacts/contactsSlice";
 
@@ -13,19 +15,29 @@ export const Filter = () => {
 
     return (
         <label htmlFor="" className={css['inpyt-filter']}>
-            Find contacts by name
-            <input
+            {/*<input
                 type="text"
                 name="filter"
                 value={contactsFilter}
                 onChange={changeFieldFilter}
                 pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+    />*/}
+            <TextField
+                className={css.input}
+                type="text"
+                name="filter"
+                value={contactsFilter}
+                onChange={changeFieldFilter}
+                pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                id="outlined-basic"
+                label={<SearchIcon />}
+                variant="outlined"
+               size="small"
             />
         </label>
     );
     
 };
-
 Filter.prototype = {
     filter: PropTypes.string.isRequired,
   changeFilter: PropTypes.func.isRequired,

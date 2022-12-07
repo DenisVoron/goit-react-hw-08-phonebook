@@ -1,3 +1,5 @@
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import { useState } from 'react'
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
@@ -56,8 +58,7 @@ export function ContactsForm() {
         <div className={css.wrapper}>
             <form autoComplete='off' className={css.form} onSubmit={handleSubmit}>
                 <label className={css['form-label']}>
-                    Name
-                    <input
+                    {/*<input
                         type="text"
                         className={css.input}
                         name="name"
@@ -66,11 +67,25 @@ export function ContactsForm() {
                         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                         required
                         onChange={handleNameChange}
+    />*/}
+                    <TextField type="text"
+                        className={css.input}
+                        name="name"
+                        value={name}
+                        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                        required
+                        onChange={handleNameChange}
+                        label="Name"
+                        variant="filled"
+                        size="small"
+                        sx={{
+                            '& > :not(style)': { height: '45px' },
+                        }}
                     />
                 </label>
                 <label htmlFor="">
-                    Number
-                    <input
+                    {/*<input
                         type="tel"
                         className={css.input}
                         name="number"
@@ -79,11 +94,26 @@ export function ContactsForm() {
                         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                         required
                         onChange={handleNameChange}
+    />*/}
+                    <TextField type="tel"
+                        className={css.input}
+                        name="number"
+                        value={number}
+                        pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                        title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+                        required
+                        onChange={handleNameChange}
+                        label="Number"
+                        variant="filled"
+                        size="small"
+                        sx={{
+                            '& > :not(style)': { height: '45px' },
+                        }}
                     />
                 </label>
-                <button type='submit' className={css.formBtn}>
+                <Button variant="contained" type='submit' className={css.formBtn} size="small">
                     Add Contact
-                </button>
+                </Button>
             </form>
         </div>
     );

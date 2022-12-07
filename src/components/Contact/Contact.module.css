@@ -1,9 +1,10 @@
 .contactDescr {
+    width: 305px;
     align-items: center;
     margin-right: 10px;
 
     font-weight: 500;
-    font-size: large;
+    font-size: 21px;
 }
 
 .contactBtn {

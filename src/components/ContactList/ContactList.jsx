@@ -6,6 +6,7 @@ import { Contact } from '../Contact/Contact';
 
 import css from './ContactList.module.css';
 
+
 export const ContactList = () => {
     
     const items = useSelector(getContacts);
@@ -22,13 +23,15 @@ export const ContactList = () => {
     const filteredContacts = contactsFilter();
 
     return (
-        <ul className={css.list}>
-            {filteredContacts.map((contact) => (
-                <li key={contact.id} className={css.listItem}>
-                    <Contact contact={contact} />
-                </li>
-            ))}
-        </ul>
+        <>
+            <ul className={css.list}>
+                {filteredContacts.map((contact) => (
+                    <li key={contact.id} className={css.listItem}>
+                        <Contact contact={contact} />
+                    </li>
+                ))}
+            </ul>
+        </>
     );
 };
 

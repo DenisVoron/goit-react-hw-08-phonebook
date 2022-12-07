@@ -5,13 +5,13 @@ import { useAuth } from 'hooks';
 
 import css from './AppBar.module.css';
 
-export const AppBar = () => {
+export const AppBarHead = (props) => {
   const { isLoggedIn } = useAuth();
 
   return (
     <header className={css.header}>
-      <Navigation />
+        <Navigation />
      {isLoggedIn ? <UserMenu /> : <AuthNav />}
-    </header>
+  </header>
   );
 };
