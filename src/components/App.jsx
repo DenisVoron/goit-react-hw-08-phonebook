@@ -44,39 +44,38 @@ export function App() {
     }, [dispatch]);
 
   return isRefreshing ? (
-    <ProgressBar
-      height="80"
-      width="80"
-      ariaLabel="progress-bar-loading"
-      wrapperStyle={{}}
-      wrapperClass={css.progressBar}
-      borderColor='#101719'
-      barColor='#51E5FF'
-    />
+      <ProgressBar
+        height="80"
+        width="80"
+        ariaLabel="progress-bar-loading"
+        wrapperStyle={{}}
+        wrapperClass={css.progressBar}
+        borderColor='#101719'
+        barColor='#51E5FF'
+      />
   ) : (
-      
-      <Suspense fallback={<div>Loading...</div>}>
-        <ThemeProvider theme={theme}>
+    <Suspense fallback={<div>Loading...</div>}>
+      <ThemeProvider theme={theme}>
         <Routes>
-        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Layout />}>
           
-          <Route index element={<Home />} />
-          <Route path="/register" element={
-            <RestrictedRoute redirectTo="/contacts" component={<RegisterPage />} />
-          }
-          />
-          <Route path="/login" element={
-            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
-          }
-          />
-          <Route path="/contacts" element={
-            <PrivateRoute redirectTo="/login" component={<Contacts />} />
-          }
-          />
-            </Route>
+            <Route index element={<Home />} />
+            <Route path="/register" element={
+              <RestrictedRoute redirectTo="/contacts" component={<RegisterPage />} />
+            }
+            />
+            <Route path="/login" element={
+              <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
+            }
+            />
+            <Route path="/contacts" element={
+              <PrivateRoute redirectTo="/login" component={<Contacts />} />
+            }
+            />
+          </Route>
             
         </Routes>
-        </ThemeProvider>
-        </Suspense>
+      </ThemeProvider>
+    </Suspense>
   );
 }
