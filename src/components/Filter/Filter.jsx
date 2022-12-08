@@ -12,16 +12,8 @@ export const Filter = () => {
     const dispatch = useDispatch();
     const changeFieldFilter = e => dispatch(changeFilter(e.currentTarget.value));
 
-
     return (
         <label htmlFor="" className={css['inpyt-filter']}>
-            {/*<input
-                type="text"
-                name="filter"
-                value={contactsFilter}
-                onChange={changeFieldFilter}
-                pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-    />*/}
             <TextField
                 className={css.input}
                 type="text"

@@ -1,6 +1,5 @@
 const styles = {
     container: {
-        width: 'fit-content',
         display: 'block',
         marginLeft: 'auto',
         marginRight: 'auto',

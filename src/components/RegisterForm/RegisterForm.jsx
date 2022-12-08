@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { register } from 'redux/auth/auth-operations';
+
 import css from './RegisterForm.module.css';
 
 export const RegisterForm = () => {
@@ -24,18 +25,14 @@ export const RegisterForm = () => {
   return (
     <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
       <label className={css.label}>
-        {/*<input type="text" name="name" />*/}
         <TextField type="text" name="name" label="Username" variant="standard" />
       </label>
       <label className={css.label}>
-        {/*<input type="email" name="email" />*/}
         <TextField type="email" name="email" label="Email" variant="standard" />
       </label>
       <label className={css.label}>
-        {/*<input type="password" name="password" />*/}
         <TextField type="password" name="password" label="Password" variant="standard" />
       </label>
-      {/*<button type="submit">Register</button>*/}
       <Stack className={css.button}>
         <Button variant="contained" type="submit" className={css.button}>
           Register

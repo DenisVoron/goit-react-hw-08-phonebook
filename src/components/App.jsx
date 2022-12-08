@@ -1,28 +1,24 @@
-import 'react-toastify/dist/ReactToastify.css';
-
 import { ProgressBar } from 'react-loader-spinner';
-
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
-import { useDispatch } from "react-redux"; //, useSelector
-import { useEffect,lazy, Suspense } from "react";
+import { useDispatch } from "react-redux";
+import { useEffect, lazy, Suspense } from "react";
 import { refreshUser } from "redux/auth/auth-operations";
 import { useAuth } from 'hooks';
 
 import css from "./App.module.css";
 
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#03a9f4',
+      main: '#3f51b5',
+      //contrastText: '#11cb5f',
     },
     secondary: {
-      main: '#007ac1',
+      main: '#f44336',
       //contrastText: '#007ac1',
     },
     neutral: {
@@ -38,8 +34,6 @@ const LoginPage = lazy(() => import("../pages/Login"));
 const RegisterPage = lazy(() => import("../pages/Register"));
 
 
-
-
 export function App() {
 
   const dispatch = useDispatch();
@@ -49,7 +43,6 @@ export function App() {
         dispatch(refreshUser());
     }, [dispatch]);
 
-  
   return isRefreshing ? (
     <ProgressBar
       height="80"
